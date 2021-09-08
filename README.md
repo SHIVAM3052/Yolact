@@ -57,3 +57,13 @@ Q.3 Experiment with an instance segmentation model using the images provided (yo
 ![000000100005](https://user-images.githubusercontent.com/60669591/132453437-d790fc16-02de-4d19-8fd6-f6cfe55addf2.png)
 ![000000100006](https://user-images.githubusercontent.com/60669591/132453444-c38940fb-f1ce-4d9b-914f-7ab73fc7b2cf.png)
 
+Well above image are the outputs from trained model.
+
+1. Lowering the image size results in a large decrease in performance, demonstrating that instance segmentation naturally demands larger images.
+2. Increasing the image size decreases speed significantly but also increases performance, as expected.
+3. In addition to the base backbone of ResNet-101 we can also test ResNet-50 and DarkNet-53 to obtain even faster results.
+4. If higher speeds are preferable then use ResNet-50 or DarkNet-53 instead of lowering the image size, as the performance of these configurations is much better,    while only being slightly slower.
+5. In Mask-rcnn the masks produced in two-stage methods are highly dependent on their region proposals in the first stage since Yolact is one-stage detector even if the model predicts different boxes across frames, the prototypes are not affected, yielding much more temporally stable masks.
+
+
+As per as my journey on instance segment this is the best architecture which is currently available which balances the trade off between accuracy vs performance.
