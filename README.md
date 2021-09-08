@@ -41,6 +41,10 @@ Q.2 List some possible challenges if implementing such model into production. Fo
 **Localization Failure :** If there are too many objects in one spot in a scene, the network can fail to localize each object in its own prototype. In these cases, the network will output something closer to a foreground mask than an instance segmentation for some objects in the group.
 Suppose we are capturing field images with low resolution(10 meter resolution) and some fields will be small in that region. With 10 meter resolution area of small fields in image would we small. If there are multiple small fields align to each other. Mask of our model going to overlap on each other.
 
+![000000100005](https://user-images.githubusercontent.com/60669591/132453437-d790fc16-02de-4d19-8fd6-f6cfe55addf2.png)
+![000000100006](https://user-images.githubusercontent.com/60669591/132453444-c38940fb-f1ce-4d9b-914f-7ab73fc7b2cf.png)
+
+
 **Leakage :** The network leverages the fact that masks are cropped after assembly, and makes no attempt to suppress noise outside of the cropped region. This works fine when the bounding box is accurate, but when it is not, that noise can creep into the instance mask, creating some “leakage” from outside the cropped region. This can also happen when two instances are far away from each other, because the network has learned that it doesn’t need to localize far away instances the cropping will take care of it.
 
 Experiment with an instance segmentation model using the images provided (you can do image augmentation) and explain the results. It can be any model (you can re-use anything you have done previously or clone any repo of your choice and use it); it does not need to be the model described in 1). We are not testing precision only; we are going to evaluate how you solve open challenges.
