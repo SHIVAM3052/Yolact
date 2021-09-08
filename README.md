@@ -47,7 +47,7 @@ Suppose we are capturing field images with low resolution(10 meter resolution) a
 
 **Leakage :** The network leverages the fact that masks are cropped after assembly, and makes no attempt to suppress noise outside of the cropped region. This works fine when the bounding box is accurate, but when it is not, that noise can creep into the instance mask, creating some “leakage” from outside the cropped region. This can also happen when two instances are far away from each other, because the network has learned that it doesn’t need to localize far away instances the cropping will take care of it.
 
-Experiment with an instance segmentation model using the images provided (you can do image augmentation) and explain the results. It can be any model (you can re-use anything you have done previously or clone any repo of your choice and use it); it does not need to be the model described in 1). We are not testing precision only; we are going to evaluate how you solve open challenges.
+Q.3 Experiment with an instance segmentation model using the images provided (you can do image augmentation) and explain the results. It can be any model (you can re-use anything you have done previously or clone any repo of your choice and use it); it does not need to be the model described in 1). We are not testing precision only; we are going to evaluate how you solve open challenges.
 
 
 ![000000100005_bbox](https://user-images.githubusercontent.com/60669591/132453370-141e2d7d-bdd6-4a13-afcb-a6b9f785cfaf.png)
